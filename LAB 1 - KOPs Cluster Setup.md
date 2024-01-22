@@ -46,4 +46,11 @@ kops get cluster
 ```
 kubectl get nodes
 ```
-
+--------------------------------
+# Run the following command once you upgrade or restarted the cluster
+```
+kops get cluster
+```
+```
+kops export kubeconfig --admin
+```
