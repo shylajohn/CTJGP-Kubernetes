@@ -3,7 +3,7 @@
 LAB-2  Creating POD
 =============================================================
 ---------------------------------------------------------------
-# Task 1 Create a pod using below Commands
+# Task 1 - Create a pod using below Commands
 ---------------------------------------------------------------
  ```
  kubectl run pod-1 --image nginx --port 80 
@@ -24,7 +24,7 @@ LAB-2  Creating POD
 
 
 ---------------------------------------------------------------
-# Task 2 Create a pod using below yaml
+# Task 2 - Create a pod using below yaml
 ---------------------------------------------------------------
 ``` 
 vi httpd-pod.yaml
