@@ -31,19 +31,19 @@ sudo hostnamectl set-hostname kops
 bash
 ```
 # Download the Kops script
-
+```
 wget https://s3.ap-south-1.amazonaws.com/files.cloudthat.training/devops/kubernetes-essentials/kops-v1.25.sh
-
+```
 # Execute the Kops script
-
+```
 . ./kops-v1.25.sh
-
+```
 # Retrieve information about the existing clusters
-
+```
 kops get cluster
-
+```
 # Get information about the Kubernetes nodes in the cluster
-
+```
 kubectl get nodes
-
+```
 
