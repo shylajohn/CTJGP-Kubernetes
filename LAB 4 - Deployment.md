@@ -2,13 +2,13 @@ Lab 4 : Deployment
 =============================================================
 
 ----------------------------------------------------------------------
-Task 1: Write a Deployment yaml and Apply it
+# Task 1: Write a Deployment yaml and Apply it
 ----------------------------------------------------------------------
-# Create a file named dep-nginx.yaml using content given below
+## Create a file named dep-nginx.yaml using content given below
 ```
 vi dep-nginx.yaml
 ```
-# Paste the following content into the file:
+## Paste the following content into the file:
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -35,21 +35,19 @@ spec:
         - containerPort: 80
 
 ```
-# Save and exit the editor
-# Apply the Deployment yaml created in the previous step
+## Save and exit the editor
+## Apply the Deployment yaml created in the previous step
 ```
 kubectl apply -f dep-nginx.yaml
 ```
-
-# View the objects created by Kubernetes Deployment and ReplicaSet 
+## View the objects created by Kubernetes Deployment and ReplicaSet 
 ```
 kubectl get deployments
 ```
 ```
 kubectl get rs
 ```
-
-# Access one of the Pods and view nginx version
+## Access one of the Pods and view nginx version
 ```
 kubectl get pods
 ```
@@ -64,20 +62,19 @@ exit
 ```
 
 -------------------------------------------------------------------------
- Task 2: Update the Deployment with a Newer Image
+ # Task 2: Update the Deployment with a Newer Image
 -------------------------------------------------------------------------
 
-# Update the nginx image in Pod using below
+## Update the nginx image in Pod using below
 ```
 kubectl set image deployment/nginx-dep nginx-ctr=nginx:1.11
 ```
 
-# Describe the deployment and see that the old pods are replaced with newer ones
+## Describe the deployment and see that the old pods are replaced with newer ones
 ```
 kubectl describe deployments
 ```
-
-# Access one of the Pods and view nginx version
+## Access one of the Pods and view nginx version
 ```
 kubectl get pods
 ```
@@ -91,19 +88,18 @@ nginx -v
 exit
 ```
 -----------------------------------------------------------------------------
-Task 3: Rollback of Deployment 
+# Task 3: Rollback of Deployment 
 -----------------------------------------------------------------------------
 
-# View the history of Deployments
+## View the history of Deployments
 ```
 kubectl rollout history deployment/nginx-dep
 ```
-
-# Rollback the Deployment done in the previous task
+## Rollback the Deployment done in the previous task
 ```
 kubectl rollout undo deployment/nginx-dep --to-revision=1
 ```
-# View the Replica Set and access one of the Pods and view nginx version
+## View the Replica Set and access one of the Pods and view nginx version
 ```
 kubectl get rs
 ```
@@ -120,36 +116,31 @@ nginx -v
 exit
 ```
 ------------------------------------------------------------------------------
-Task 4: Scaling of Deployments
+# Task 4: Scaling of Deployments
 ------------------------------------------------------------------------------
-
-# View the number of Pod replicas created by the Deployment
+## View the number of Pod replicas created by the Deployment
 ```
 kubectl get deployments
 ```
 ```
 kubectl get pods
 ```
-
-# Scale up the deployment to have 8 Pod replicas
+## Scale up the deployment to have 8 Pod replicas
 ```
 kubectl scale deployment nginx-dep --replicas=8
 ```
-
-# Check the Pods and deployment to and verify that the number of Pod replicas are 8
+## Check the Pods and deployment to and verify that the number of Pod replicas are 8
 ```
 kubectl get deployments
 ```
 ```
 kubectl get pods
 ```
-
-# Scale down the deployments to 2 Pod replicas
+## Scale down the deployments to 2 Pod replicas
 ```
 kubectl scale deployment nginx-dep --replicas=2
 ```
-
-# Check the Pods and deployment to and verify that the number of Pod replicas are down to 2
+## Check the Pods and deployment to and verify that the number of Pod replicas are down to 2
 ```
 kubectl get deployments
 ```
@@ -158,21 +149,21 @@ kubectl get pods
 ```
 
 -----------------------------------------------------------------------------
-Task 5: Deployment Auto Scaling HPA – Horizontal Pod 
+# Task 5: Deployment Auto Scaling HPA – Horizontal Pod 
 Autoscaling
 -----------------------------------------------------------------------------
-# Create an HPA (Horizontal Pod Autoscaler):
+## Create an HPA (Horizontal Pod Autoscaler):
 ```
 kubectl autoscale deployment nginx-dep --min=3 --max=8 --cpu-percent=70
 ```
-# View the HPA status:
+## View the HPA status:
 ```
 kubectl get hpa
 ```
 -----------------------------------------------------------------------------
-Task 6 Cleanup the resources using below command
+# Task 6 Cleanup the resources using below command
 -----------------------------------------------------------------------------
-# Delete the resources created during the lab:
+## Delete the resources created during the lab:
 ```
 kubectl delete -f dep-nginx.yaml
 ```
