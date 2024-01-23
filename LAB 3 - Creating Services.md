@@ -116,7 +116,11 @@ kubectl describe svc httpd-svc
 ```
 ## Validate connectivity using External IP on NodePort using below or via browser
 ```
-curl <EXTERNAL-IP>:NodePort
+curl <Node-Public-IP>:NodePort
+```
+OR
+```
+curl <Service-IP>:NodePort
 ```
 
 ------------------------------------------------------------------------------------
