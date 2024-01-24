@@ -68,7 +68,7 @@ kubectl get pv
 kubectl describe pv pv-volume
 ```
 # Task 3 : Create a Persistent Volume Claim
-## Create a file named pv-volume.yaml using content given below
+## Create a file named pv-claim.yaml using content given below
 ```
 vi pv-claim.yaml
 ```
