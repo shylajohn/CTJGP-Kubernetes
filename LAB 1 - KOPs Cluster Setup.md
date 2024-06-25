@@ -34,6 +34,8 @@ bash
 ```
 wget https://s3.ap-south-1.amazonaws.com/files.cloudthat.training/devops/kubernetes-essentials/kops-v1.25.sh
 ```
+modify awscli installation command in the downloaded script file
+`sudo snap install aws-cli --classic`
 # Execute the Kops script
 ```
 . ./kops-v1.25.sh
